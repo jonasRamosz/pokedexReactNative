@@ -54,18 +54,6 @@ function useDatabase() {
     )
   }
 
-  function up(indentificador) {
-    // const db = SQLite.openDatabase("database.db")
-    const db = DatabaseConnection.getConnection()
-    db.exec(
-      [
-        { sql: 'delete from pokemons where (nome) =  (?);', args: [indentificador] },
-      ],
-      false,
-      () => console.log('Linha deletada ')
-    )
-  }
-
 
   function findById(id) {
     return new Promise(function (resolve, reject) {
